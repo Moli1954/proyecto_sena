@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("pryecto_nicol")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf9c7b066ed1faed99acb26c61848988090004fa")]
 [assembly: System.Reflection.AssemblyProductAttribute("pryecto_nicol")]
 [assembly: System.Reflection.AssemblyTitleAttribute("pryecto_nicol")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
