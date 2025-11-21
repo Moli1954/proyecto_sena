@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Connections;
 using Microsoft.EntityFrameworkCore;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 using pryecto_nicol.Data;
+using pryecto_nicol.Services;
+using pryecto_nicol.Views.implementacion;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +11,9 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 
 builder.Services.AddDbContext<DBContext>(options => options.UseNpgsql(connectionString));
 
-builder.Services.AddControllersWithViews();  
+builder.Services.AddScoped<IUserinterface, Userinterface>();
+builder.Services.AddScoped<Ipawordservicio, Passwordservicio>();
+builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 

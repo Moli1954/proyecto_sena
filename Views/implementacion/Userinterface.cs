@@ -10,19 +10,25 @@ namespace pryecto_nicol.Views.implementacion
 {
     public class Userinterface : IUserinterface
     {
-        public void crearUsuario(usuarioModel1 usuario)
+        public async Task crearUsuario(usuarioModel1 usuario)
         {
             if (usuario != null)
             {
+                usuario.Usuario_contrasena = passwordServicio.Hashpassword (usuario.Usuario_contrasena);
                 dBContex.Usuarios.Add(usuario);
-                dBContex.SaveChangesAsync();
+                await dBContex.SaveChangesAsync();
 
             }
         }
+
+
+
         private readonly DBContext dBContex;
-        public Userinterface(DBContext dBContex)
+        private readonly Ipawordservicio passwordServicio;
+        public Userinterface(DBContext dBContex, Ipawordservicio passwordServicio)
         {
             this.dBContex = dBContex;
+            this.passwordServicio = passwordServicio;
         }
     }
 }

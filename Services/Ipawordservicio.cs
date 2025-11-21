@@ -2,12 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using pryecto_nicol.Models;
 
 namespace pryecto_nicol.Services
 {
-    public interface   IUserinterface
+    public interface Ipawordservicio
     {
-        Task crearUsuario(usuarioModel1 usuario);
+        string Hashpassword(string password);
     }
-} 
+}
